@@ -12,7 +12,7 @@ Usage: [-h] [-l SERVICE] [-a PROFILE] [-s STAGE]...
 Deploy provided SERVICE via serverless
     -h || --help                     Display this help and exit
     -l || --service SERVICE          Select service (lambda) to deploy
-    -a || --aws-profile PROFILE      AWS Profile to use for deployment, default tessadev
+    -a || --aws-profile PROFILE      AWS Profile to use for deployment, default your-profile
     -s || --stage STAGE              Stage to deploy, default dev
 EOF
 }

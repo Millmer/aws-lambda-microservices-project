@@ -1,5 +1,5 @@
 {
-  "name": "microservice-apis",
+  "name": "aws-lambda-microservices-apis",
   "version": "0.0.1",
   "description": "Serverless APIs for App",
   "main": "index.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tessabv/bart.git"
+    "url": "git+git@github.com:Millmer/aws-lambda-microservices-project.git"
   },
   "author": "James Miller",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tessabv/bart/issues"
+    "url": "https://github.com/Millmer/aws-lambda-microservices-project/issues"
   },
-  "homepage": "https://github.com/tessabv/bart#readme",
+  "homepage": "https://github.com/Millmer/aws-lambda-microservices-project/#readme",
   "devDependencies": {
     "@serverless/eslint-config": "^1.2.1",
     "aws-sdk": "^2.532.0",
