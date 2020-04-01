@@ -1,0 +1,59 @@
+{
+  "name": "microservice-apis",
+  "version": "0.0.1",
+  "description": "Serverless APIs for App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint . --cache",
+    "lint-fix": "eslint . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tessabv/bart.git"
+  },
+  "author": "James Miller",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tessabv/bart/issues"
+  },
+  "homepage": "https://github.com/tessabv/bart#readme",
+  "devDependencies": {
+    "@serverless/eslint-config": "^1.2.1",
+    "aws-sdk": "^2.532.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.20.1",
+    "serverless": "^1.62.0",
+    "serverless-api-gateway-caching": "^1.4.0",
+    "serverless-webpack": "^5.3.1",
+    "webpack": "^4.40.2"
+  },
+  "dependencies": {
+    "@hapi/joi": "^16.0.0",
+    "axios": "^0.19.2",
+    "he": "^1.2.0",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.21.5",
+    "uuid": "^3.3.3"
+  },
+  "eslintConfig": {
+    "extends": "@serverless/eslint-config/node",
+    "root": true,
+    "parserOptions": {
+      "ecmaVersion": 8
+    },
+    "rules": {
+      "no-throw-literal": "off",
+      "no-console": "off"
+    },
+    "ignorePatterns": [
+      "node_modules/",
+      "api-test-service",
+      "webhook-service",
+      "toolbox"
+    ]
+  }
+}

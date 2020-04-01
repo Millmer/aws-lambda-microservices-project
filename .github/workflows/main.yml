@@ -1,0 +1,33 @@
+name: CICD - dev
+
+on:
+  push:
+    branches: 
+      - dev
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Generate git diff -> Install serverless -> Deploy with serverless
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_REGION: 'eu-central-1'
+      run: |
+        git --version
+        echo ***Generate git diff
+        git diff --dirstat=files,0 HEAD^ HEAD
+        git diff --dirstat=files,0 HEAD^ HEAD | sed -E 's/^[ 0-9.]+% //g' > diff
+
+        echo ***Check npm vesrion
+        npm --version
+        echo ***Install serverless
+        npm install serverless
+        ./node_modules/serverless/bin/serverless --version
+
+        echo ***Deploy
+        sh build.sh
+        

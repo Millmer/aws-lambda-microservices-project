@@ -1,0 +1,15 @@
+# package directories
+node_modules
+jspm_packages
+
+# Serverless directories
+.serverless
+
+# Webpack
+.webpack
+
+# Mac OSX
+.DS_Store
+
+# eslint
+.eslintcache
