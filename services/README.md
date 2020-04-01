@@ -15,4 +15,4 @@ The expected file structure is:
     ...               # Any other module specific libraries that may be developed
 ```
 
-The services connected with multiple AWS Services. I was also heavily involved in the creation and maintainance of the services. Mostly written in Node.js (with the exception of a few Python3 functinos) relying heavily on the AWS SDK to interact with the many services we integrated with (DynamoDB, ElasticSearch, Aurora Serverless, S3, SNS, SES & Cognito).
+The services connected with multiple AWS Services. I was also heavily involved in the creation and maintainance of the services. Mostly written in Node.js (with the exception of a few Python3 functions) relying heavily on the AWS SDK to interact with the many services we integrated with (DynamoDB, ElasticSearch, Aurora Serverless, S3, SNS, SES & Cognito).

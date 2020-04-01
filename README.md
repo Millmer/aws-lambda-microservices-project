@@ -1,7 +1,14 @@
 # Scaleable Microservices in Lambda with Terraform and the Serverless Framework
-This is a stripped down version of a scaleable microservice application using AWS Lambda functions as the base. It is provided here as an exmaple of how we structured the project. The project infrastructure is shown below. This infrastructure supported a grocery list application that allowed users to browse and search promotions from 15 retailers across the Netherlands. Users were able to add products from multiple retailers to a list, receive notifications when favourite products are on offer and share lists in a near realtime fashion with family members. It's hosted in AWS and uses mainly Lambda, API Gateway, Cognito, DynamoDB & CloudWatch. This repo provides only the Serverless Functions/API Endpoints for the App Project and the rest of the infrastructure is deployed using a separate terraform project.
+This is a stripped down version of a scaleable microservice application using AWS Lambda functions as the base. It is provided here as an exmaple of how we structured the project. The project infrastructure is shown below. This infrastructure supported a grocery list application that allowed users to browse and search promotions from 15 retailers across the Netherlands. Users were able to add products from multiple retailers to an interactable list, receive notifications when favourite products are on offer and share lists in a near realtime fashion with family members. It's hosted in AWS and uses mainly Lambda, API Gateway, Cognito, DynamoDB, ElasticSearch, ECS Fargate & CloudWatch. This repo provides only the Serverless Functions/API Endpoints for the App Project and the rest of the infrastructure is deployed using a separate terraform project.
 
 The project was unfortunatley discontinued despite showing freat potential. There was still plent more left to do on the project, it had only just started to fly.
+
+# Architecture
+This repo only contains the lambda stack seen in the diagram. The rest is managed in terraform which is found in a separate more private repo also co-authored by me.
+
+<p>
+  <img src="docs/architechture.png" alt="Architecture" />
+</p>
 
 # Structure (Microservices + Mono-Repo)
 
@@ -35,7 +42,7 @@ We are using the `serverless-bundle` plugin that internally uses `Webpack` to on
 
 See the services [README.md](./services/) for more insights.
 
-## Data Store
+## Data Stores
 This application interacted with 4 main data stores (DynamoDB, ElasticSearch, Aurora Serverless & S3). We relied heavily on the AWS SDK to acheive this and became quite adept at using it. The DynamoDB table structures were carefully thought out to adapt the `mono-table` design, trying to achieve as much utility as we could out of a single table by utilising high-cardinality attributes, composite keys with composite attributes and overloading GSIs. Contact me for more information on how we structured the table.
 
 # Installation
@@ -63,13 +70,6 @@ In order to deploy single function:
 To invoke the function locally:
 
 `sls invoke local -f function-name --stage dev --aws-profile aws-profile`
-
-# Architecture
-This repo only contains the lambda stack seen in the diagram. The rest is managed in terraform which is found in a separate more private repo also co-authored by me.
-
-<p>
-  <img src="docs/architechture.png" alt="Architecture" />
-</p>
 
 # CI/CD
 
