@@ -27,7 +27,7 @@
     "serverless": "^1.62.0",
     "serverless-api-gateway-caching": "^1.4.0",
     "serverless-webpack": "^5.3.1",
-    "webpack": "^4.40.2"
+    "webpack": "^5.75.0"
   },
   "dependencies": {
     "@hapi/joi": "^16.0.0",
